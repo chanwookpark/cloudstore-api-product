@@ -22,7 +22,9 @@ public class ProductApiApplication extends SpringBootServletInitializer {
     Environment env;
 
     @RequestMapping("/")
-    public String hello() {return "hello";}
+    public String hello() {
+        return "hello(" + env.getActiveProfiles() + ")";
+    }
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
